@@ -147,7 +147,7 @@
         .miracle-result { display: inline-block; background: #fff; padding: 20px 50px; border-radius: 50px; font-size: 26px; font-weight: 800; color: #444; box-shadow: var(--shadow-soft); border: 2px solid rgba(255,129,82,0.2);}
         .miracle-result span { color: var(--milal-orange); font-size: 30px; font-weight: 900;}
 
-        /* [5번째 섹션] 3단계 가치 구독 */
+        /* [5번째 섹션] 3단계 가치 구독 (✔️ 체크 아이콘) */
         .step-guide-section { padding: 160px 0; background: rgba(240, 248, 245, 0.7); backdrop-filter: blur(5px); border-radius: 0 0 60px 60px; position: relative; z-index: 1; }
         .step-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; text-align: center; }
         .step-header { margin-bottom: 90px; }
@@ -167,6 +167,7 @@
         .sg-card h3 { font-size: 26px; font-weight: 900; color: #222; margin-bottom: 15px; letter-spacing: -1px;}
         .sg-card p { font-size: 17px; color: #666; line-height: 1.6; font-weight: 500;}
         .sg-checklist { margin-top: 80px; display: inline-flex; gap: 40px; background: #fff; padding: 25px 60px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; border: 2px dashed #ddd;}
+        .sg-checklist::before { content: '📌'; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 35px; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));}
         .sg-checklist span { font-size: 17px; font-weight: 800; color: #444; display: flex; align-items: center; gap: 8px;}
         .chk-mark { color: var(--milal-green); font-size: 22px; font-weight: 900; }
 
@@ -324,12 +325,14 @@
         .ending-logos span { font-size: 24px; color: #ccc; font-weight: 300; }
 
         /* =========================================
-           📱 [CSS - 모바일 반응형 완전판 (둔탁함/Bulky 제거, 여백 최적화)] 🔥
+           📱 [CSS - 모바일 반응형 완전판 (가로 스크롤 이슈 해결!)] 🔥
            ========================================= */
         @media screen and (max-width: 768px) {
+            /* 스크롤 트랙 확실하게 살리기 (중요!) */
             .scroll-track { display: block !important; left: 15px; width: 2px; }
             .scroll-egg { display: block !important; left: -11px; font-size: 24px; }
 
+            /* 둥근 버튼으로 유지하고 모바일 애니메이션 강제 해결 */
             .floating-btn { width: 75px; height: 75px; right: 15px; bottom: 15px; border-radius: 50%; padding: 0; gap: 0; animation: floatUp 2.5s ease-in-out infinite !important;}
             .floating-btn-icon { font-size: 22px; margin-bottom: 2px; animation: eggWiggle 1.5s infinite ease-in-out !important;}
             .floating-btn span:last-child { font-size: 12px; line-height: 1; display: block;}
@@ -339,6 +342,7 @@
             .top-logo { top: 20px; right: 20px; }
             .top-logo img { height: 24px; }
 
+            /* 스크롤 트랙 여백 추가 (모든 메인 컨테이너에 적용) */
             .content-wrapper, .sad-content, .story-container, .miracle-inner, .step-inner, .et-inner, .tl-inner, .info-inner, .impact-inner, .faq-inner {
                 padding-left: 45px !important; padding-right: 20px !important; width: 100%; box-sizing: border-box;
             }
@@ -352,6 +356,9 @@
             .sad-intro-section { padding: 80px 20px 80px 45px !important; min-height: auto; }
             .sad-title { font-size: 28px; margin-bottom: 20px;}
             .sad-desc { font-size: 16px; margin-bottom: 10px;}
+            
+            /* 💥 텍스트 두 줄 깨짐 해결 (여백 및 nowrap 조정) 💥 */
+            .sad-eyebrow { font-size: 14px; letter-spacing: 0px; padding: 5px 15px; white-space: nowrap; margin-bottom: 15px;}
 
             /* 🌟 모바일 자동 가로 스와이프 슬라이더 최적화 🌟 */
             .mobile-swipe-wrapper {
@@ -387,7 +394,7 @@
             .miracle-result { font-size: 16px; padding: 12px 0; width: 100%; border-radius: 15px;}
             .miracle-result span { font-size: 20px; }
 
-            /* 5섹션 귀여운 다꾸 각도/테이프 & 가운데 정렬 유지 */
+            /* 5섹션 귀여운 다꾸 각도/테이프 강제 유지 */
             .step-guide-section { padding: 60px 0 40px; border-radius: 0 0 30px 30px;}
             .step-header { text-align: center !important; }
             .step-header h2 { font-size: 24px;}
