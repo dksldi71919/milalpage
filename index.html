@@ -276,32 +276,31 @@
         .sg-checklist span::before { content: '✓'; color: var(--milal-green); font-size: 24px; font-weight: 900;}
 
         /* =========================================
-           [CSS - 6번째 섹션] 함께 먹는 밥상
+           🔥🔥 [CSS - 6번째 섹션] 함께 먹는 밥상 (감성 배경 + 오버레이) 🔥🔥
            ========================================= */
-        .emotional-together-section { padding: 180px 0; background: transparent; position: relative; overflow: hidden; z-index: 1;}
-        .et-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; gap: 100px; }
-        
-        .et-text { flex: 1; position: relative; z-index: 5; }
-        .et-leaf-icon { font-size: 40px; color: var(--milal-green); margin-bottom: 20px; display: block; filter: drop-shadow(0 5px 10px rgba(0,163,110,0.1)); }
-        .et-main-title { font-size: 44px; font-weight: 900; color: #222; line-height: 1.4; margin-bottom: 40px; letter-spacing: -1.5px; }
-        .et-main-title span { color: var(--milal-orange); }
-        .et-desc-group p { font-size: 20px; color: #555; line-height: 1.9; font-weight: 500; margin-bottom: 20px; }
-        .et-desc-group p strong { color: #222; font-weight: 800; border-bottom: 2px solid var(--milal-yellow); }
-
-        .et-img-area { flex: 1.2; position: relative; }
-        .et-img-card { 
-            position: relative; background: #fff;
-            border-radius: 40px 180px 40px 40px; 
-            padding: 25px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
-            z-index: 2; overflow: hidden; transition: 0.5s var(--ease-out);
+        .emotional-together-section {
+            position: relative; width: 100%; height: auto; padding: 250px 0 150px;
+            background-image: url('images/togerther-table01.png');
+            background-size: cover; background-position: center; background-repeat: no-repeat;
+            display: flex; align-items: center; justify-content: center; overflow: hidden; z-index: 1;
         }
-        .et-img-card:hover { transform: scale(1.02); box-shadow: 0 40px 80px rgba(255, 129, 82, 0.15); }
         
-        .et-img-inner { width: 100%; height: 550px; border-radius: 20px 150px 20px 20px; overflow: hidden; }
-        .et-img-inner img { width: 100%; height: 100%; object-fit: cover; }
+        /* 어두운 오버레이 설정 */
+        .et-bg-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); z-index: 2; }
 
-        .et-bg-glow { position: absolute; top: -50px; right: -50px; width: 400px; height: 400px; background: var(--bg-peach); filter: blur(100px); border-radius: 50%; z-index: 1; opacity: 0.5; }
-        .et-dot-deco { position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; background: var(--milal-yellow); opacity: 0.3; filter: blur(30px); border-radius: 50%; }
+        /* 텍스트 컨테이너 */
+        .et-inner { position: relative; z-index: 10; max-width: 900px; width: 100%; margin: 0 auto; padding: 0 40px; text-align: center; display: block; }
+        .et-text { width: 100%; position: relative; text-align: center; }
+        .et-leaf-icon { font-size: 40px; color: var(--milal-green); margin-bottom: 25px; display: block; filter: drop-shadow(0 5px 10px rgba(0,163,110,0.1)); }
+        
+        /* 메인 타이틀 */
+        .et-main-title { font-size: 50px; font-weight: 200; color: #fff; line-height: 1.4; margin-bottom: 50px; letter-spacing: -1.5px; }
+        .et-main-title span { color: var(--milal-orange); font-weight: 800; }
+
+        /* 설명 문구 그룹 */
+        .et-desc-group { max-width: 700px; margin: 0 auto; }
+        .et-desc-group p { font-size: 20px; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 2.2; margin-bottom: 25px; letter-spacing: -0.5px; }
+        .et-desc-group p strong { color: var(--milal-yellow); font-weight: 600; text-shadow: 0 0 10px rgba(255,203,49,0.5); }
 
         /* =========================================
            [CSS - 7번째 섹션] 식탁 온기 채우기 CTA 
@@ -363,7 +362,7 @@
         .cb-content p { font-size: 18px; font-weight: 300; opacity: 0.9;}
 
         /* =========================================
-           [CSS - 9번째 섹션] IMPACT 갤러리 (폴라로이드 감성 반영)
+           [CSS - 9번째 섹션] IMPACT 갤러리 
            ========================================= */
         .impact-section { padding: 150px 0; background: rgba(240, 248, 245, 0.8); backdrop-filter: blur(5px); border-radius: 60px 60px 0 0; position: relative; z-index: 1;}
         .impact-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
@@ -442,13 +441,13 @@
             .scroll-track { display: block; left: 12px; width: 2px; }
             .scroll-egg { display: block; left: -9px; font-size: 20px; }
             
-            /* 모바일에서 배경 계란 보이기 (은은하게) */
+            /* 모바일에서 둥둥 계란 표시하되 방해 안되게 줄임 */
             .deco-item { transform: scale(0.6); opacity: 0.25; }
 
             .sec-title { font-size: 26px; margin-bottom: 30px; text-align: left; padding-left: 35px;}
             .btn-primary { padding: 18px 30px; font-size: 18px; width: 100%; border-radius: 40px;}
             
-            /* 모바일 플로팅 버튼 - 터치 시 애니메이션 멈춤 강제 해제 */
+            /* 모바일 플로팅 버튼 - 애니메이션 멈춤 오류 해결 */
             .floating-btn { width: auto; height: auto; padding: 12px 20px; font-size: 14px; right: 15px; bottom: 15px; border-radius: 40px; animation: floatUp 2.5s ease-in-out infinite !important;}
             .floating-btn-icon { font-size: 20px; margin-bottom: 0; animation: eggWiggle 1.5s infinite ease-in-out !important;}
             .floating-btn::after { display: none; } 
@@ -534,15 +533,12 @@
             .sg-checklist { flex-direction: column; align-items: flex-start; padding: 25px 20px; gap: 15px; margin: 30px 0 0 0; width: 100%; border-radius: 15px;}
             .sg-checklist::before { font-size: 25px; top: -12px;}
 
-            .emotional-together-section { padding: 80px 0; }
-            .et-inner { flex-direction: column; gap: 50px; }
-            .et-text { text-align: center; order: 2; }
-            .et-main-title { font-size: 30px; margin-bottom: 25px; }
-            .et-desc-group p { font-size: 17px; }
-            .et-img-area { order: 1; width: 100%; }
-            .et-img-card { border-radius: 30px 100px 30px 30px; padding: 15px; }
-            .et-img-inner { height: 350px; border-radius: 20px 80px 20px 20px; }
-            .et-leaf-icon { margin: 0 auto 15px; }
+            /* 모바일 6섹션 (배경 이미지 감성) */
+            .emotional-together-section { padding: 120px 0 80px !important; background-position: 70% center !important; }
+            .et-inner { padding-left: 35px !important; padding-right: 20px !important; }
+            .et-leaf-icon { font-size: 30px; margin-bottom: 15px; }
+            .et-main-title { font-size: 32px !important; margin-bottom: 30px !important; line-height: 1.3;}
+            .et-desc-group p { font-size: 17px !important; line-height: 1.8 !important; margin-bottom: 15px !important; word-break: keep-all;}
             
             .cta-interactive-section { padding: 40px 20px 80px; }
             .box-cta-wrap { padding: 40px 20px; border-radius: 30px; margin-left: 0; width: 100%; box-sizing: border-box;}
@@ -777,7 +773,7 @@
     </section>
 
     <section class="emotional-together-section scroll-trigger">
-        <div class="et-bg-glow"></div>
+        <div class="et-bg-overlay"></div>
         <div class="et-inner">
             
             <div class="et-text fade-up">
@@ -787,15 +783,6 @@
                     <p>밥을 먹는 공간은 달라도, 아이들과 같은 계란으로 마음은 '함께' 식사할 수 있습니다.</p>
                     <p>우리의 식탁을 건강하게 꾸릴 때,<br>결식아동들의 식탁도 건강하게 꾸릴 수 있습니다.</p>
                     <p><strong>냉장고에서 계란 한 알을 꺼낼 때<br>아이들의 내일도 함께 깨어납니다.</strong></p>
-                </div>
-            </div>
-
-            <div class="et-img-area fade-scale delay-200">
-                <div class="et-dot-deco"></div>
-                <div class="et-img-card">
-                    <div class="et-img-inner">
-                        <img src="images/togerther-table01.png" alt="함께 먹는 따뜻한 밥상">
-                    </div>
                 </div>
             </div>
 
